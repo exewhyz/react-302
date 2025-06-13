@@ -21,6 +21,7 @@ export default function ProductItem({ name, price }) {
         onClick={() => {
           handleClick("Raj");
         }}
+        disabled={loading}
       >
         {loading ? "Adding to cart" : "Add to Cart"}
       </button>
