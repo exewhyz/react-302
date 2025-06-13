@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 export default function Form() {
-  const [name, setName] = useState("Aniket");
-  const [email, setEmail] = useState("example@gmail.com");
-  const [password, setPassword] = useState("1234");
-  const [confirmPassword, setConfirmPassword] = useState("1234");
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const [confirmPassword, setConfirmPassword] = useState();
+  const testRef = useRef(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -14,9 +15,9 @@ export default function Form() {
       <input
         type="text"
         placeholder="Enter your Name"
-        value={name}
+        ref={testRef}
         onChange={(event) => {
-          setName(event.target.value);
+          setName(testRef.current.value);
         }}
       />
       <input
