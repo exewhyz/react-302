@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ProductItem from "./ProductItem";
 
 const products = [
@@ -25,6 +25,14 @@ export default function Products() {
   setTimeout(() => {
     setLoading(false);
   }, 2000);
+
+  useEffect(() => {
+    console.log("calling useEffect");
+
+    return () => {
+      console.log("component unmounted");
+    };
+  }, []);
 
   return loading ? (
     <h1>Loading...</h1>

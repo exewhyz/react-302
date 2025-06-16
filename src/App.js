@@ -7,7 +7,7 @@ function App() {
     <div>
       <Timer />
       {/* <Form /> */}
-      {/* <Products /> */}
+      <Products />
     </div>
   );
 } 
